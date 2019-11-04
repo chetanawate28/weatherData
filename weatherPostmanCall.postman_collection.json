@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "8314154f-9c91-4f78-ac62-f5f95abbf6c0",
+		"name": "weatherPostmanCall",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:6250/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"chetan\",\n\t\"password\":\"chetan\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6250/login",
+					"host": [
+						"localhost"
+					],
+					"port": "6250",
+					"path": [
+						"login"
+					]
+				},
+				"description": "login request"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:6250/weatherForcast/Mumbai/json/metric",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiY2hldGFuIiwiaWF0IjoxNTcyODAwMDM1LCJleHAiOjE1NzI4MDM2MzV9.3zKfsipxOI8PMqz9yBgkgWCBIA53Y7gck7WLYaADFi2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:6250/weatherForcast/Mumbai/json/metric",
+					"host": [
+						"localhost"
+					],
+					"port": "6250",
+					"path": [
+						"weatherForcast",
+						"Mumbai",
+						"json",
+						"metric"
+					]
+				},
+				"description": "weather forcast call"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
