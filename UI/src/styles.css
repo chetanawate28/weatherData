@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.date { border: 1px solid black;}
+.windDirection{transform: rotate(254deg)}
+.center {
+    margin: 150px auto;
+    width: 50%;
+    border: 2px solid blue;
+    padding: 10px;
+  }

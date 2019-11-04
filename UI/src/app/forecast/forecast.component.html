@@ -1,0 +1,61 @@
+<kt-auto-refresh 
+          (TimerExpired)="getWeatherForcastData()" 
+          [ElapsTime]="time" 
+          [hidden]="true">
+</kt-auto-refresh>
+
+<form class="center">
+<div>
+    <input type="text | lowercase" name="name" [(ngModel)]="name">
+</div>
+
+<div class="input">
+    <input type="submit"  value="submit" (click)="getWeatherForcastData()">
+  </div>
+</form>
+<div *ngIf ="weatherForcastData.length > 0">
+    <h3> Weather Info {{this.weatherInfos.city.name}}</h3>
+</div>
+
+  
+  <div *ngIf ="weatherForcastData.length > 0">
+      <mat-grid-list cols=45>
+          <mat-grid-tile [colspan]=5 [rowspan]=1>      
+          </mat-grid-tile>
+          
+          <mat-grid-tile *ngFor="let item of dateData" [colspan]="item.colSpanCount" class="date">
+              <h6>{{item.date}}</h6>
+          </mat-grid-tile>
+    
+          <mat-grid-tile  [colspan]=5 [rowspan]=1 ><h5> Hours</h5>      
+          </mat-grid-tile>
+        <mat-grid-tile *ngFor="let weatherInfo of weatherForcastData" [colspan]=1
+        [rowspan]=1 >      
+          <h6>{{weatherInfo.time}}</h6>      
+        </mat-grid-tile>
+    
+          <mat-grid-tile  [colspan]=5 [rowspan]=1 ><h5> temp °C</h5>      
+          </mat-grid-tile>
+        <mat-grid-tile *ngFor="let weatherInfo of weatherForcastData" [colspan]=1
+        [rowspan]=1 >      
+          <h6>{{weatherInfo.main.temp}}</h6>      
+        </mat-grid-tile>
+    
+        <mat-grid-tile  [colspan]=5 [rowspan]=1 > <h5>wind speed m/s</h5>           
+        </mat-grid-tile>
+    
+        <mat-grid-tile *ngFor="let weatherInfo of weatherForcastData" [colspan]=1
+        [rowspan]=1 >     
+          <h6>{{weatherInfo.wind.speed}}</h6>           
+        </mat-grid-tile>
+    
+        <mat-grid-tile [colspan]=5 [rowspan]=1 ><h5>wind direction (degrees)</h5>      
+        </mat-grid-tile>
+        <mat-grid-tile *ngFor="let weatherInfo of weatherForcastData" [colspan]=1
+        [rowspan]=1 >           
+          <mat-icon [ngStyle]="{'transform': 'rotate('+weatherInfo.wind.deg+'deg)'}">arrow_upward</mat-icon>      
+        </mat-grid-tile>  
+      </mat-grid-list>      
+  </div>
+
+  

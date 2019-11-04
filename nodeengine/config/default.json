@@ -1,0 +1,22 @@
+{
+    "socketcon": {
+        "name": "weatherForcastService",
+        "port": "6250"
+    },
+    "sqlConfig": {
+        "user": "root",
+        "password": "root",
+        "server": "localhost",
+        "host": "DESKTOP-4IQSKKR",
+        "port": "3306",
+        "database": "weather",
+        "connectionTimeout": 1000000,
+        "requestTimeout": 600000
+    },
+    "weatherForcastDetails":
+    {
+        "url": "http://api.openweathermap.org/data/2.5/forecast",
+        "apiKey": "b17f27b07af08e62ed35a50f3a1b2437"
+    },
+    "logWritePath": "./"
+}
